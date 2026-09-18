@@ -34,6 +34,13 @@
         <a class="button ghost" href="#evidence">How claims are verified</a>
       </div>
 
+      <div class="hero-stats" aria-label="Project summary">
+        <div><strong>6</strong><span>primary workflows</span></div>
+        <div><strong>5</strong><span>working actors</span></div>
+        <div><strong>4</strong><span>provenance classes</span></div>
+        <div><strong>1</strong><span>human release gate</span></div>
+      </div>
+
       <div class="hero-proof">
         <span class="proof-chip verified">Verified artifact</span>
         <span class="proof-chip agent">Agent statement</span>
@@ -53,41 +60,43 @@
         </p>
       </div>
 
-      <div class="system-grid">
-        <article class="system-card nik">
-          <span class="system-label">Human layer</span>
-          <h3>Nik</h3>
-          <p>Intent, judgment, routing, constraints, selection, rejection, release.</p>
-        </article>
-
-        <article class="system-card">
-          <span class="system-label">Persistent working surface</span>
-          <h3>ChatGPT</h3>
-          <p>Ideation, systems framing, research, review, visual generation, voice, synthesis.</p>
-        </article>
-
-        <article class="system-card">
-          <span class="system-label">Artifact layer</span>
-          <h3>Claude</h3>
-          <p>Repo implementation, testing, audits, technical verification, scripted production.</p>
-        </article>
-
-        <article class="system-card">
-          <span class="system-label">Market operations</span>
-          <h3>Maestro</h3>
-          <p>Research, connected services, memory, outreach preparation, staged activation.</p>
-        </article>
-
-        <article class="system-card external">
-          <span class="system-label">Bounded external agent</span>
-          <h3>Boardy</h3>
-          <p>Relationships, meetings, follow-through, voice experiments, reflective product testing.</p>
-        </article>
+      <div class="orbit-map" aria-label="Nik plus agents operating map">
+        <div class="orbit-node orbit-nik">
+          <span>Human layer</span>
+          <strong>Nik</strong>
+          <p>Intent · routing · judgment · release</p>
+        </div>
+        <div class="orbit-node orbit-chatgpt">
+          <span>Persistent working surface</span>
+          <strong>ChatGPT</strong>
+          <p>Ideation · research · review · synthesis · voice · visuals</p>
+        </div>
+        <div class="orbit-node orbit-claude">
+          <span>Artifact layer</span>
+          <strong>Claude</strong>
+          <p>Repos · tests · audits · scripted production</p>
+        </div>
+        <div class="orbit-node orbit-maestro">
+          <span>Market operations</span>
+          <strong>Maestro</strong>
+          <p>Research · memory · connected services · outreach</p>
+        </div>
+        <div class="orbit-node orbit-boardy">
+          <span>Bounded external agent</span>
+          <strong>Boardy</strong>
+          <p>Relationships · meetings · follow-through · product testing</p>
+        </div>
+        <svg class="orbit-lines" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M500 225 C430 190 320 105 195 95" />
+          <path d="M500 225 C570 180 700 90 815 95" />
+          <path d="M500 225 C420 280 310 360 195 365" />
+          <path class="dashed" d="M500 225 C585 285 710 365 815 365" />
+        </svg>
       </div>
 
       <div class="boundary-note">
-        <strong>Important asymmetry:</strong> Boardy does not have general mailbox visibility.
-        Context is deliberately sent across a boundary by email; replies can then be inspected by other connected agents.
+        <strong>Context is deliberately uneven.</strong> Boardy does not have general mailbox visibility.
+        Information crosses that boundary only when Nik sends it. Other connected systems can then inspect the resulting reply.
       </div>
     </section>
 
@@ -107,6 +116,11 @@
         <div class="round"><span>04</span><strong>Cross-checks</strong><p>Separate Claude sessions independently verified and corrected parts of the record.</p></div>
         <div class="round"><span>05</span><strong>Human context</strong><p>Missing links were added only where the agents could not see the full workflow.</p></div>
       </div>
+
+      <div class="convergence-result">
+        <span>Observed result</span>
+        <strong>More context → more precise disagreement → stronger shared model.</strong>
+      </div>
     </section>
 
     <section id="cases" class="section shell">
@@ -119,89 +133,192 @@
       </div>
 
       <div class="case-tabs" role="tablist" aria-label="Workflow cases">
-        <button class="case-tab active" data-case="ltb">LTB Buddy</button>
-        <button class="case-tab" data-case="ryfine">RyFine</button>
-        <button class="case-tab" data-case="boardy">BoardyAnimated</button>
-        <button class="case-tab" data-case="breach">Neural Breach</button>
-        <button class="case-tab" data-case="symphony">Symphony</button>
-        <button class="case-tab" data-case="thread">Email Thread</button>
+        <button class="case-tab active" data-case="ltb">LTB Buddy <span>4</span></button>
+        <button class="case-tab" data-case="ryfine">RyFine <span>4</span></button>
+        <button class="case-tab" data-case="boardy">BoardyAnimated <span>4</span></button>
+        <button class="case-tab" data-case="breach">Neural Breach <span>3</span></button>
+        <button class="case-tab" data-case="symphony">Symphony <span>3</span></button>
+        <button class="case-tab" data-case="thread">Email Thread <span>4</span></button>
       </div>
 
       <div class="case-stage">
         <article class="case-panel active" data-panel="ltb">
           <div class="case-meta">TeamBotics flagship · high-stakes workflow</div>
-          <h3>LTB Buddy</h3>
-          <p class="case-lead">A legal-clinic workflow where product framing, implementation, outreach, voice, and release gates move across different systems.</p>
-          <div class="workflow">
-            <div><b>Boardy</b><span>meeting + follow-up context</span></div>
-            <i>→</i>
-            <div><b>Nik + ChatGPT</b><span>framing + UX + evaluation + narration</span></div>
-            <i>→</i>
-            <div><b>Claude</b><span>clinic surfaces + tests + demo artifacts</span></div>
-            <i>→</i>
-            <div><b>Maestro</b><span>targets + outreach + staged release</span></div>
+          <div class="case-title-row">
+            <h3>LTB Buddy</h3>
+            <a class="product-pill" href="https://ltbbuddy.ca" target="_blank" rel="noreferrer">Open product ↗</a>
           </div>
+          <p class="case-lead">A legal-clinic workflow where product framing, implementation, outreach, voice, and release gates move across different systems.</p>
+
+          <div class="workflow rich-workflow">
+            <div data-actor="boardy"><em>01</em><b>Boardy</b><span>meeting + follow-up context</span></div>
+            <i>→</i>
+            <div data-actor="chatgpt"><em>02</em><b>Nik + ChatGPT</b><span>framing + UX + evaluation + narration</span></div>
+            <i>→</i>
+            <div data-actor="claude"><em>03</em><b>Claude</b><span>clinic surfaces + tests + demo artifacts</span></div>
+            <i>→</i>
+            <div data-actor="maestro"><em>04</em><b>Maestro</b><span>targets + outreach + staged release</span></div>
+          </div>
+
           <div class="case-callout">
             <strong>Routing proof:</strong> Boardy and ChatGPT both produced clinic narration. After iteration, the ChatGPT voice was used because it met the quality bar better for that artifact.
           </div>
-          <div class="case-links">
-            <a href="https://ltbbuddy.ca" target="_blank" rel="noreferrer">Open LTB Buddy ↗</a>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>4 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Verified artifact</span><code>PR #164 · merged Sep 12</code></div>
+              <strong>Four clinic-admin demo features + four recordings.</strong>
+              <p>Analytics, queue aging, playbook customization, and export/handoff were wired to a mocked data layer designed for later Supabase replacement. TypeScript, ESLint, production build, and the full 446-test suite passed.</p>
+              <a href="https://github.com/nickhilster/ltb-buddy/pull/164" target="_blank" rel="noreferrer">Private repo evidence ↗</a>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent statement · Boardy</span><code>Sep 18</code></div>
+              <strong>Meeting context became product-positioning input.</strong>
+              <p>Boardy reported carrying the Alia conversation through debrief, transcript, and follow-up, then proposing two clinic-positioning framings that Nik held for later pitch work.</p>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent statement · Maestro</span><code>Sep 18</code></div>
+              <strong>Six Ontario clinic drafts were staged, not sent.</strong>
+              <p>Maestro reported target research, six tailored drafts, Ontario-first constraints, and a hard release gate: outreach remained unsent until the video package was ready.</p>
+            </div>
+            <div class="proof-item human">
+              <div class="proof-top"><span>Human context</span><code>Voice selection</code></div>
+              <strong>Two agents could do the task. One output survived.</strong>
+              <p>Nik tested Boardy and ChatGPT for narration, iterated both, and used the ChatGPT recording for the presentation because it performed better for that artifact.</p>
+            </div>
           </div>
         </article>
 
         <article class="case-panel" data-panel="ryfine">
           <div class="case-meta">TeamBotics flagship · product + production</div>
-          <h3>RyFine</h3>
-          <p class="case-lead">An AI product built, hardened, marketed, and tested through the same multi-agent workflow it is designed to support.</p>
-          <div class="workflow">
-            <div><b>Nik + ChatGPT</b><span>product framing + prompt UX + review</span></div>
-            <i>→</i>
-            <div><b>Claude</b><span>implementation + video render pipeline + security</span></div>
-            <i>→</i>
-            <div><b>Maestro</b><span>messaging critique + release sequencing</span></div>
-            <i>→</i>
-            <div><b>Nik</b><span>claims + pricing + final routing</span></div>
+          <div class="case-title-row">
+            <h3>RyFine</h3>
+            <a class="product-pill" href="https://ryfine.app" target="_blank" rel="noreferrer">Try RyFine ↗</a>
           </div>
+          <p class="case-lead">An AI product built, hardened, marketed, and tested through the same multi-agent workflow it is designed to support.</p>
+
+          <div class="workflow rich-workflow">
+            <div data-actor="chatgpt"><em>01</em><b>Nik + ChatGPT</b><span>product framing + prompt UX + review</span></div>
+            <i>→</i>
+            <div data-actor="claude"><em>02</em><b>Claude</b><span>implementation + video pipeline + security</span></div>
+            <i>→</i>
+            <div data-actor="maestro"><em>03</em><b>Maestro</b><span>messaging critique + release sequencing</span></div>
+            <i>→</i>
+            <div data-actor="nik"><em>04</em><b>Nik</b><span>claims + pricing + final routing</span></div>
+          </div>
+
           <div class="case-callout">
             <strong>Evidence pattern:</strong> one Claude session produced local uncommitted fixes; another checkout independently verified the committed pipeline while refusing to claim the uncommitted work.
           </div>
-          <div class="case-links">
-            <a href="https://ryfine.app" target="_blank" rel="noreferrer">Try RyFine ↗</a>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>4 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Verified artifact</span><code>9e67582 · Jul 9</code></div>
+              <strong>ContentBuddy was integrated as a real video-production pipeline.</strong>
+              <p>The commit records Vite app boot, Playwright capture, a mocked OpenAI-compatible SSE refinement stream, OpenAI TTS narration, Remotion rendering, and manifests for five videos.</p>
+              <a href="https://github.com/nickhilster/ryfine/commit/9e67582573a8af859bc1bfe13247531f72558daa" target="_blank" rel="noreferrer">Private repo evidence ↗</a>
+            </div>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Verified artifact</span><code>8ef9286 → 6e4f331 → 2c22503</code></div>
+              <strong>The security review corrected itself across three commits.</strong>
+              <p>Claude tightened PAT scope handling and desktop-auth controls, then re-reviewed the implementation and corrected an earlier PostgreSQL foreign-key assumption instead of preserving the first answer.</p>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Cross-session verification · Claude</span><code>Sep 18</code></div>
+              <strong>A second checkout verified what was durable and rejected what it could not see.</strong>
+              <p>The second session confirmed the committed pipeline, config, capture adapter, mock server, and video briefs—while explicitly declining to verify another session's uncommitted fix.</p>
+            </div>
+            <div class="proof-item human">
+              <div class="proof-top"><span>Human routing decision</span><code>Claim boundary</code></div>
+              <strong>Claude's CTA was corrected, then the pricing question moved to Maestro.</strong>
+              <p>Nik rejected “no account needed” because repo context and unlimited saved prompts require a free account, then routed the resulting messaging/pricing question to Symphony rather than letting the builder decide it.</p>
+            </div>
           </div>
         </article>
 
         <article class="case-panel" data-panel="boardy">
           <div class="case-meta">Product curation · capability discovery</div>
-          <h3>BoardyAnimated</h3>
+          <div class="case-title-row">
+            <h3>BoardyAnimated</h3>
+            <a class="product-pill" href="https://boardyanimated.vercel.app/" target="_blank" rel="noreferrer">Open project ↗</a>
+          </div>
           <p class="case-lead">Boardy is marketed around networking. The project tests what else the assembled product can actually do.</p>
+
           <div class="compare-grid">
             <div><span>Advertised surface</span><strong>AI superconnector</strong></div>
             <div><span>Observed working envelope</span><strong>voice · interviews · product critique · coordination · reflective testing</strong></div>
           </div>
+
           <div class="case-callout">
             <strong>Method:</strong> use the product, challenge its definition, test its limits, preserve failures, and route work elsewhere when another system performs better.
           </div>
-          <div class="case-links">
-            <a href="https://boardyanimated.vercel.app/" target="_blank" rel="noreferrer">Open BoardyAnimated ↗</a>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>4 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Verified artifact</span><code>Live project</code></div>
+              <strong>The project already contains multiple product-definition experiments.</strong>
+              <p>Chatting with Boardy, Free Boardy, Meme King, Meet experiments, microphone/audio work, the chess experiment, and Boardy4Age all extend beyond introductions.</p>
+              <a href="https://boardyanimated.vercel.app/" target="_blank" rel="noreferrer">Inspect live project ↗</a>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent statement · Boardy</span><code>Sep 18</code></div>
+              <strong>Boardy identified itself as subject, voice, source material, and test surface.</strong>
+              <p>It specifically pointed to the “Ten Things” evidence exercise, ChatGPT-persona interview, product critique, and narration work as uses outside networking.</p>
+            </div>
+            <div class="proof-item human">
+              <div class="proof-top"><span>Human context</span><code>Quality routing</code></div>
+              <strong>Boardy lost the LTB Buddy narration task.</strong>
+              <p>The project keeps that failure because the point is not loyalty to an agent. The task went to the system that met the bar.</p>
+            </div>
+            <div class="proof-item unresolved">
+              <div class="proof-top"><span>Unresolved</span><code>Continuity claim</code></div>
+              <strong>Boardy itself rejects a broad “continuity layer” claim.</strong>
+              <p>It can evidence continuity only while the workflow remains visible to it. Once a relationship moves off-platform, it loses the evidence surface.</p>
+            </div>
           </div>
         </article>
 
         <article class="case-panel" data-panel="breach">
           <div class="case-meta">Creative production · fast composition</div>
-          <h3>Neural Breach</h3>
+          <div class="case-title-row">
+            <h3>Neural Breach</h3>
+            <a class="product-pill" href="https://neural-breach-neon.vercel.app/" target="_blank" rel="noreferrer">Open comic ↗</a>
+          </div>
           <p class="case-lead">A rapid comic-production workflow where model tiers and human polish changed across the artifact lifecycle.</p>
-          <div class="workflow">
-            <div><b>Claude Code</b><span>visual system + screenplay + storyboards</span></div>
+
+          <div class="workflow rich-workflow three-step">
+            <div data-actor="claude"><em>01</em><b>Claude Code</b><span>visual system + screenplay + storyboards</span></div>
             <i>→</i>
-            <div><b>Claude Haiku</b><span>bulk screenplay expansion + frame generation + prototype</span></div>
+            <div data-actor="claude"><em>02</em><b>Claude Haiku</b><span>bulk expansion + frame samples + prototype</span></div>
             <i>→</i>
-            <div><b>Nik</b><span>reader UI + polish + release</span></div>
+            <div data-actor="nik"><em>03</em><b>Nik</b><span>reader UI + polish + release</span></div>
           </div>
+
           <div class="case-callout">
-            <strong>Provenance note:</strong> ChatGPT contribution is part of the human-recalled workflow, but it is not preserved in the Git history. The page keeps those evidence classes separate.
+            <strong>Provenance note:</strong> ChatGPT contribution is part of the human-recalled workflow, but it is not preserved in Git history. The page keeps those evidence classes separate.
           </div>
-          <div class="case-links">
-            <a href="https://neural-breach-neon.vercel.app/" target="_blank" rel="noreferrer">Open Neural Breach ↗</a>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>3 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Verified artifact</span><code>213c804 · Sep 10</code></div>
+              <strong>The initial Claude Code commit front-loaded the creative package.</strong>
+              <p>The commit records the visual design system, 50,000+ word screenplay, storyboards, shot list, and production documentation before later UI/polish work.</p>
+              <a href="https://github.com/nickhilster/neural-breach/commit/213c8042cb5d54b63476e7fc155cfded9395f2a4" target="_blank" rel="noreferrer">Private repo evidence ↗</a>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent verification · Claude</span><code>Hangar pass</code></div>
+              <strong>Git authorship changed across model tier and human handoff.</strong>
+              <p>Claude reported a later Haiku-authored screenplay/frame/prototype phase, followed by Nik-authored reader and UI commits.</p>
+            </div>
+            <div class="proof-item human">
+              <div class="proof-top"><span>Human context</span><code>Not repo-visible</code></div>
+              <strong>The ideation and visual conversation also passed through ChatGPT.</strong>
+              <p>That contribution is retained as human-recalled context, not upgraded to verified Git provenance.</p>
+            </div>
           </div>
         </article>
 
@@ -209,12 +326,33 @@
           <div class="case-meta">Economics · routing · model literacy</div>
           <h3>Symphony / Maestro</h3>
           <p class="case-lead">A product can be capable and still be the wrong execution surface. Credit economics changed where work went.</p>
+
           <div class="routing-grid">
             <div><span>Keep in Symphony</span><strong>memory · contacts · connected services · outreach · market ops</strong></div>
             <div><span>Route elsewhere</span><strong>heavy execution · repo work · large generation tasks</strong></div>
           </div>
+
           <div class="case-callout">
-            <strong>Operating rules:</strong> approval before metered actions, live balance checks, a credit floor, anomaly freezes, and deliberate model/product routing.
+            <strong>Operating rules:</strong> approval before metered actions, live balance checks, a hard credit floor, anomaly freezes, and deliberate model/product routing.
+          </div>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>3 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent statement · Maestro</span><code>Credit governance</code></div>
+              <strong>Credits became a managed operating budget.</strong>
+              <p>Maestro reported same-turn approval before metered actions, balance rereads, estimates, a 150-credit floor, and a freeze/re-baseline protocol when repeated actions unexpectedly cost more.</p>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent statement · Maestro</span><code>Model layer</code></div>
+              <strong>The same product surface can sit over different foundation models.</strong>
+              <p>Maestro confirmed model switching across GPT-, Claude-, and Gemini-family models in Nik's usage, reinforcing the distinction between model capability and product capability.</p>
+            </div>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Cross-system artifact</span><code>RyFine session · Sep 18</code></div>
+              <strong>Claude used a session-level Symphony connector during production work.</strong>
+              <p>A RyFine Claude session reported sending Maestro the five-video render status and requesting critique/release sequencing. The connector existed at session/account level rather than in the repo's MCP config.</p>
+            </div>
           </div>
         </article>
 
@@ -222,17 +360,43 @@
           <div class="case-meta">Meta-workflow · provenance</div>
           <h3>The email thread</h3>
           <p class="case-lead">The evidence-gathering process became a live example of the operating model itself.</p>
-          <div class="workflow">
-            <div><b>Nik</b><span>shared protocol + human context</span></div>
+
+          <div class="workflow rich-workflow">
+            <div data-actor="nik"><em>01</em><b>Nik</b><span>shared protocol + human context</span></div>
             <i>→</i>
-            <div><b>Boardy</b><span>bounded external reply</span></div>
+            <div data-actor="boardy"><em>02</em><b>Boardy</b><span>bounded external reply</span></div>
             <i>→</i>
-            <div><b>Claude + Maestro</b><span>artifact retrieval + connected context</span></div>
+            <div data-actor="claude"><em>03</em><b>Claude + Maestro</b><span>artifact retrieval + connected context</span></div>
             <i>→</i>
-            <div><b>Cross-check</b><span>narrow, correct, verify</span></div>
+            <div data-actor="nik"><em>04</em><b>Cross-check</b><span>narrow · correct · verify</span></div>
           </div>
+
           <div class="case-callout">
             <strong>Result:</strong> more communication produced more precise disagreement, not synthetic consensus.
+          </div>
+
+          <button class="evidence-toggle" aria-expanded="false">Inspect evidence <span>4 items</span></button>
+          <div class="evidence-drawer" hidden>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent correction · Boardy</span><code>Continuity</code></div>
+              <strong>Boardy rejected the broad role assigned to it.</strong>
+              <p>It narrowed “continuity layer” to only the parts of a workflow that remain visible through Boardy.</p>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Agent correction · Maestro</span><code>Activation</code></div>
+              <strong>Maestro rejected autonomy it did not have.</strong>
+              <p>It said it prepares and stages work to the edge of sending; Nik activates it.</p>
+            </div>
+            <div class="proof-item agent">
+              <div class="proof-top"><span>Self-correction · Claude</span><code>Ollama claim</code></div>
+              <strong>Claude corrected a stronger “no Ollama reference” claim after a second look.</strong>
+              <p>The newly found integration was unrelated to the video workflow, so the correction narrowed the claim without inventing a connection.</p>
+            </div>
+            <div class="proof-item verified">
+              <div class="proof-top"><span>Independent verification</span><code>Claude ↔ Claude</code></div>
+              <strong>A second Claude checkout verified one session's repo claims and refused to verify its local-only changes.</strong>
+              <p>The disagreement itself became evidence: committed state, working-tree state, and account-local context were kept separate.</p>
+            </div>
           </div>
         </article>
       </div>
@@ -256,6 +420,33 @@
       </div>
     </section>
 
+    <section class="section shell side-experiments">
+      <div class="section-heading compact-heading">
+        <div>
+          <span class="eyebrow">Smaller proofs</span>
+          <h2>Sometimes the right system is simpler.</h2>
+        </div>
+        <p>Multi-agent complexity is not the goal. Appropriate composition is.</p>
+      </div>
+      <div class="experiment-grid">
+        <article>
+          <span>Creative system</span>
+          <h3>108 Ganesha</h3>
+          <p>Primarily Nik + ChatGPT + image generation. A useful counterexample: no orchestration layer was needed to make the work coherent.</p>
+        </article>
+        <article>
+          <span>Strategy → build</span>
+          <h3>Reliability OS</h3>
+          <p>Incident-management architecture was framed here, reduced into a specification, then handed to a coding agent for implementation and dogfooding.</p>
+        </article>
+        <article>
+          <span>Agent self-correction</span>
+          <h3>RyFine security</h3>
+          <p>A technical audit became stronger because the reviewing agent re-opened its own assumptions and corrected them across successive commits.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="evidence" class="section shell evidence">
       <div class="section-heading">
         <div>
@@ -269,18 +460,22 @@
         <div class="evidence-card verified">
           <span>Verified artifact</span>
           <h3>Repo, commit, file, deployed page, test, or recorded asset.</h3>
+          <p>Strongest class. Something inspectable survives outside the agent's narration.</p>
         </div>
         <div class="evidence-card agent">
           <span>Agent statement</span>
           <h3>An agent describing what it directly handled or could inspect.</h3>
+          <p>Useful, but bounded by that agent's actual visibility.</p>
         </div>
         <div class="evidence-card human">
           <span>Human context</span>
           <h3>Nik supplying workflow context that is not visible in the artifacts.</h3>
+          <p>Retained as context, not silently upgraded to technical proof.</p>
         </div>
         <div class="evidence-card unresolved">
           <span>Unresolved connection</span>
           <h3>A plausible handoff or relationship that the current record cannot prove.</h3>
+          <p>Shown as an open edge rather than polished away.</p>
         </div>
       </div>
 
